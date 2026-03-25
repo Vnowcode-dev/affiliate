@@ -166,76 +166,78 @@
       z-index: 2;
     }
 
-    .product-item {
-      backdrop-filter: blur(5px);
-      background: #F3EDE0;
-      padding: 25px;
-      margin-top: 20px;
-      border-radius: 12px;
-      color: #464f3b;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: left;
-      transition: transform 0.2s;
-      max-width: 340px; /* contoh biar nggak kepanjangan */
-      justify-self: center; /* biar item ketengah grid */
-    }
+.product-item {
+  backdrop-filter: blur(5px);
+  background: #F3EDE0;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 12px;
+  color: #464f3b;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background-color 0.3s, color 0.3s;
+  max-width: 340px;
+  justify-self: center;
+  
+  /* Layout Flexbox agar tombol bisa didorong ke bawah */
+  display: flex;
+  flex-direction: column;
+  min-height: 520px; /* Saya sesuaikan tingginya agar proporsional */
+}
 
-    .product-item h2 {
-      margin-bottom: 2px;
-      text-align: left;
-    }
+.product-item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
 
-    .product-item p {
-      text-align: left;
-      margin-bottom: 10px;
-    }
+.product-item h2 {
+  font-weight: bold;
+  font-size: 20px;
+  user-select: none;
+  margin-bottom: 5px;
+  text-align: left;
+}
 
-    section a {
-      text-decoration: none;
-      color: rgb(0, 0, 0);
-      text-align: left;
+.product-item p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: left;
+}
 
-    }
+/* Efek Hover pada Kartu */
+.product-item:hover {
+  transform: scale(1.05);
+  background-color: #5e6e4a;
+  filter: drop-shadow(0 10px 15px #000000b2);
+  color: white;
+}
 
-    .product-item:hover {
-      transform: scale(1.05);
-      background-color: #5e6e4a;
-      filter: drop-shadow(0 10px 15px #000000b2) drop-shadow(0 0 10px #000000);
-      color: white;
-    }
+/* Container Tombol */
+.btnlink {
+  margin-top: auto; /* Trik kunci: mendorong tombol ke dasar */
+  text-align: left;
+}
 
-    .product-item img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 12px;
-      display: inline-block;
-    }
+.btnlink a {
+  display: inline-block;
+  background-color: transparent;
+  padding: 10px 30px;
+  color: inherit; /* Mengikuti warna teks parent (hitam/putih saat hover) */
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 20px;
+  font-size: 1rem;
+  border: 2px solid currentColor; /* Garis mengikuti warna teks */
+  transition: all 0.5s;
+}
 
-    .product-item h2 {
-      font-weight: bold;
-      font-size: 20px;
-      user-select: none;
-    }
-
-    .product-item p {
-      font-size: 20px;
-      padding-bottom: 10px;
-    }
-
-    .btnlink a {
-      background-color: transparent;
-      padding: 10px 20px;
-      color: #000000;
-      text-decoration: none;
-      font-family: 'Courier New', Courier, monospace;
-      border-radius: 20px;
-      font-size: 1rem;
-      margin-bottom: 20px;
-      border: 2px solid #000000;
-      transition: background-color 0.5s, color 0.5s, filter 0.5s;
-      animation: fadeIn 0.5s ease-out forwards;
-      text-align: center;
-    }
+/* Efek Hover Khusus Tombol */
+.btnlink a:hover {
+  background-color: #ffffff;
+  color: #8FA276;
+  border-color: #ffffff;
+  filter: drop-shadow(0 0 10px #ffffff);
+}
 
     .btnlink a:hover {
       background-color: #ffffff;
@@ -318,7 +320,7 @@
     <div class="bg">
       <h1>Link No 1</h1>
     </div>
-    <div class="btn"><a href="index.css">Kembali</a></div>
+    <div class="btn"><a href="index.html">Kembali</a></div>
     <section id="productGrid">
       <article class="product-item" data-name="Gadamis Malaka Gamis Malaika" data-link="https://s.shopee.co.id/1BHsFb5nzq">
         <img src="imgpr/Gamis.png" alt="Produk 1">
